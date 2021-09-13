@@ -16,23 +16,11 @@
     	class="com.luv2code.springdemo.RandomFortuneService"></bean>
     <!-- id is like an alias 
     fully qualified class name of implementation class -->
-    <bean id="myCoach" 								
-    	class="com.luv2code.springdemo.TrackCoach"> 
+    <bean id="myCoach" 						
+    	class="com.luv2code.springdemo.TrackCoach"
+    	scope="prototype">
     	<constructor-arg ref="myFortuneService"/>
     </bean>
-    
-    <bean id="myCricketCoach"
-    	class="com.luv2code.springdemo.CricketCoach">
-    	<!-- set up the setter injection, Spring will call "setFortuneService"-->
-    	<property name="fortuneService" ref="myFortuneService"/>
-    		
-    	<!-- inject literal values -->
-    	<property name="emailAddress" value="${foo.email}"/>
-    	<property name="team" value="${foo.team}"/>
-    </bean>
-    
-    <!-- load the properties file sport.properties -->
-    <context:property-placeholder location="classpath:sport.properties"/>
     
 </beans>
 

@@ -3,6 +3,7 @@ package com.luv2code.springdemo;
 public class CricketCoach implements Coach{
 	
 	private FortuneService fortuneService;
+	private RandomFortuneService randomFortuneService;
 	
 	private String emailAddress;
 	private String team;
@@ -49,6 +50,12 @@ public class CricketCoach implements Coach{
 	@Override
 	public String getDailyFortune() {
 		return fortuneService.getFortune();
+	}
+	
+	@Override
+	public String getRandomFortune() {
+		// TODO Auto-generated method stub
+		return randomFortuneService.getRandomFortune();
 	}
 
 }
